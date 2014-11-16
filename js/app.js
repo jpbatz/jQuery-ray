@@ -47,15 +47,12 @@ $(function() { /*document ready*/
   sectionHeaderContent2.html("I'm Section Header 2's H2 Text");
 
   var section2Ulist = $('<ul>');
-  // sectionDiv2.append(section2Ulist);
 
   for(var i=0; i<3; i++) {
     var listElement = $('<li>');
     section2Ulist.append(listElement);
     listElement.html("my name");
     sectionDiv2.append(section2Ulist);
-
   }
-
 
 });
