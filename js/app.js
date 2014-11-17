@@ -12,7 +12,7 @@ $(function() { /*document ready*/
 
   var headerContent = $('<h1>', { class: "header_title" });
   headerDiv.append(headerContent);
-  headerContent.html("Hello!");
+  headerContent.html("Hello, this is the jQuery-ray Project");
 
 
 // PART 2
@@ -53,6 +53,62 @@ $(function() { /*document ready*/
     section2Ulist.append(listElement);
     listElement.html("my name");
     sectionDiv2.append(section2Ulist);
+  }
+
+// PART 4
+
+// iterating over an array of objects
+
+  var posts = [
+    {
+      title: "My First Car",
+      body: "It was so sweet like candy.",
+      date: "Jan-20-1976"
+    },
+    {
+      title: "My Second Car",
+      body: "She ran so smooth.",
+      date: "Aug-23-1988"
+    },
+    {
+      title: "My Third Car",
+      body: "Old faithful.",
+      date: "May-11-1997"
+    }
+  ];
+
+// console.log(posts);
+// console.log(posts[0]);
+// console.log(posts[1]);
+// console.log(posts[2]);
+
+// each post is a section
+
+var ulist = $('<ul>');
+body.append(ulist); 
+
+
+  for(var j=0; j<posts.length; j++) {
+    var post_section = $('<section>');
+    var post_header = $('<header>');
+    var post_body = $('<body>');
+    var post_footer = $('<footer>');
+
+    post_header.html(posts[j].title);
+    post_body.html(posts[j].body);
+    post_footer.html(posts[j].date);
+
+    // append to inner DOM elements
+    post_section.append(post_header);
+    post_section.append(post_body);
+    post_section.append(post_footer);
+
+    // append parent element to DOM ul
+    var listItem2 = $('<li>');
+    listItem2.append(post_section);
+
+    ulist.append(listItem2);
+
   }
 
 });
